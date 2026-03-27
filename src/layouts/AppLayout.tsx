@@ -20,12 +20,10 @@ const getSidebarItems = (role: UserRole): NavItem[] => {
         { label: "Providers", path: "/admin/providers", icon: "solar:case-round-bold-duotone", section: "Manage" },
         { label: "Categories", path: "/admin/categories", icon: "solar:widget-bold-duotone", section: "Manage" },
         { label: "Services", path: "/admin/services", icon: "solar:layers-bold-duotone", section: "Manage" },
-        { label: "Managers", path: "/admin/managers", icon: "solar:user-id-bold-duotone", section: "Manage" },
         { label: "Coupons", path: "/admin/coupons", icon: "solar:ticket-sale-bold-duotone", section: "Manage" },
         { label: "Bookings", path: "/admin/bookings", icon: "solar:calendar-bold-duotone", section: "Finance" },
         { label: "Transactions", path: "/admin/transactions", icon: "solar:card-recive-bold-duotone", section: "Finance" },
         { label: "Withdrawals", path: "/admin/withdrawals", icon: "solar:hand-money-bold-duotone", section: "Finance" },
-        { label: "Complaints", path: "/admin/complaints", icon: "solar:danger-triangle-bold-duotone", section: "System" },
         { label: "Settings", path: "/admin/settings", icon: "solar:settings-bold-duotone", section: "System" },
         { label: "Profile", path: "/profile", icon: "solar:user-rounded-bold-duotone", section: "System" },
       ];
