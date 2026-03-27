@@ -44,9 +44,7 @@ const AdminCategoriesPage = lazy(() => import("@/pages/AdminCategoriesPage"));
 const AdminServicesPage = lazy(() => import("@/pages/AdminServicesPage"));
 const AdminBookingsPage = lazy(() => import("@/pages/AdminBookingsPage"));
 const AdminCouponsPage = lazy(() => import("@/pages/AdminCouponsPage"));
-const AdminComplaintsPage = lazy(() => import("@/pages/AdminComplaintsPage"));
 const AdminTransactionsPage = lazy(() => import("@/pages/AdminTransactionsPage"));
-const AdminManagersPage = lazy(() => import("@/pages/AdminManagersPage"));
 const AdminAnalyticsPage = lazy(() => import("@/pages/AdminAnalyticsPage"));
 const AdminSettingsPage = lazy(() => import("@/pages/AdminSettingsPage"));
 const AdminWithdrawalsPage = lazy(() => import("@/pages/AdminWithdrawalsPage"));
@@ -125,9 +123,7 @@ const App = () => (
             <Route path="/admin/services" element={<LW roles={["Admin"]}><AdminServicesPage /></LW>} />
             <Route path="/admin/bookings" element={<LW roles={["Admin"]}><AdminBookingsPage /></LW>} />
             <Route path="/admin/coupons" element={<LW roles={["Admin"]}><AdminCouponsPage /></LW>} />
-            <Route path="/admin/complaints" element={<LW roles={["Admin"]}><AdminComplaintsPage /></LW>} />
             <Route path="/admin/transactions" element={<LW roles={["Admin"]}><AdminTransactionsPage /></LW>} />
-            <Route path="/admin/managers" element={<LW roles={["Admin"]}><AdminManagersPage /></LW>} />
             <Route path="/admin/analytics" element={<LW roles={["Admin"]}><AdminAnalyticsPage /></LW>} />
             <Route path="/admin/settings" element={<LW roles={["Admin"]}><AdminSettingsPage /></LW>} />
             <Route path="/admin/withdrawals" element={<LW roles={["Admin"]}><AdminWithdrawalsPage /></LW>} />
