@@ -167,10 +167,10 @@ const AppLayout = ({ children }: { children: ReactNode }) => {
         </nav>
 
         {/* User Footer */}
-        <div className="border-t border-sidebar-border p-2">
+        <div className="border-t border-sidebar-border p-2.5">
           {!collapsed && (
-            <div className="flex items-center gap-2.5 rounded-md px-3 py-2 mb-1">
-              <div className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-primary/15 text-primary text-[10px] font-bold">
+            <div className="flex items-center gap-2.5 rounded-lg px-3 py-2.5 mb-1.5 bg-sidebar-accent/30">
+              <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-sidebar-primary text-sidebar-primary-foreground text-[11px] font-bold shadow-sm">
                 {user?.name?.charAt(0)?.toUpperCase() || "U"}
               </div>
               <div className="flex-1 min-w-0">
@@ -182,7 +182,7 @@ const AppLayout = ({ children }: { children: ReactNode }) => {
           <button
             onClick={handleLogout}
             title="Sign out"
-            className={`flex w-full items-center gap-2 rounded-md px-3 py-2 text-xs text-sidebar-muted hover:bg-destructive/10 hover:text-destructive transition-colors ${
+            className={`flex w-full items-center gap-2.5 rounded-lg px-3 py-2 text-xs font-medium text-sidebar-muted hover:bg-destructive/20 hover:text-destructive transition-all duration-200 ${
               collapsed ? "justify-center px-2" : ""
             }`}
           >
