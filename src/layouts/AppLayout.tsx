@@ -126,14 +126,15 @@ const AppLayout = ({ children }: { children: ReactNode }) => {
         </div>
 
         {/* Navigation */}
-        <nav className="flex-1 overflow-y-auto scrollbar-thin py-2 px-2">
+        <nav className="flex-1 overflow-y-auto scrollbar-thin py-3 px-2.5">
           {Object.entries(sections).map(([section, items]) => (
-            <div key={section} className="mb-1">
+            <div key={section} className="mb-2">
               {!collapsed && (
-                <p className="px-3 pt-3 pb-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-sidebar-muted/50">
+                <p className="px-3 pt-3 pb-2 text-[10px] font-bold uppercase tracking-[0.18em] text-sidebar-muted/40 select-none">
                   {section}
                 </p>
               )}
+              {collapsed && <div className="my-2 mx-2 h-px bg-sidebar-border/50" />}
               {items.map((item) => {
                 const active = location.pathname === item.path;
                 return (
@@ -142,16 +143,19 @@ const AppLayout = ({ children }: { children: ReactNode }) => {
                     to={item.path}
                     onClick={() => setMobileOpen(false)}
                     title={collapsed ? item.label : undefined}
-                    className={`group flex items-center gap-2.5 rounded-md px-3 py-2 text-[13px] font-medium transition-all duration-150 mb-0.5 ${
+                    className={`group relative flex items-center gap-2.5 rounded-lg px-3 py-2 text-[13px] font-medium transition-all duration-200 mb-0.5 ${
                       active
-                        ? "bg-primary/10 text-primary"
-                        : "text-sidebar-muted hover:bg-secondary hover:text-sidebar-foreground"
+                        ? "bg-sidebar-accent text-sidebar-accent-foreground shadow-sm"
+                        : "text-sidebar-muted hover:bg-sidebar-accent/50 hover:text-sidebar-foreground"
                     } ${collapsed ? "justify-center px-2" : ""}`}
                   >
+                    {active && (
+                      <span className="absolute left-0 top-1/2 -translate-y-1/2 h-5 w-[3px] rounded-r-full bg-sidebar-primary" />
+                    )}
                     <Icon
                       icon={item.icon}
-                      className={`h-[17px] w-[17px] flex-shrink-0 ${
-                        active ? "text-primary" : "text-sidebar-muted group-hover:text-sidebar-foreground"
+                      className={`h-[18px] w-[18px] flex-shrink-0 transition-colors duration-200 ${
+                        active ? "text-sidebar-primary" : "text-sidebar-muted group-hover:text-sidebar-foreground"
                       }`}
                     />
                     {!collapsed && <span>{item.label}</span>}
@@ -163,10 +167,10 @@ const AppLayout = ({ children }: { children: ReactNode }) => {
         </nav>
 
         {/* User Footer */}
-        <div className="border-t border-sidebar-border p-2">
+        <div className="border-t border-sidebar-border p-2.5">
           {!collapsed && (
-            <div className="flex items-center gap-2.5 rounded-md px-3 py-2 mb-1">
-              <div className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-primary/15 text-primary text-[10px] font-bold">
+            <div className="flex items-center gap-2.5 rounded-lg px-3 py-2.5 mb-1.5 bg-sidebar-accent/30">
+              <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-sidebar-primary text-sidebar-primary-foreground text-[11px] font-bold shadow-sm">
                 {user?.name?.charAt(0)?.toUpperCase() || "U"}
               </div>
               <div className="flex-1 min-w-0">
@@ -178,7 +182,7 @@ const AppLayout = ({ children }: { children: ReactNode }) => {
           <button
             onClick={handleLogout}
             title="Sign out"
-            className={`flex w-full items-center gap-2 rounded-md px-3 py-2 text-xs text-sidebar-muted hover:bg-destructive/10 hover:text-destructive transition-colors ${
+            className={`flex w-full items-center gap-2.5 rounded-lg px-3 py-2 text-xs font-medium text-sidebar-muted hover:bg-destructive/20 hover:text-destructive transition-all duration-200 ${
               collapsed ? "justify-center px-2" : ""
             }`}
           >
