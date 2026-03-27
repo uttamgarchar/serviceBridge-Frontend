@@ -49,10 +49,7 @@ const AdminTransactionsPage = lazy(() => import("@/pages/AdminTransactionsPage")
 const AdminManagersPage = lazy(() => import("@/pages/AdminManagersPage"));
 const AdminAnalyticsPage = lazy(() => import("@/pages/AdminAnalyticsPage"));
 const AdminSettingsPage = lazy(() => import("@/pages/AdminSettingsPage"));
-const AdminReportsPage = lazy(() => import("@/pages/AdminReportsPage"));
 const AdminWithdrawalsPage = lazy(() => import("@/pages/AdminWithdrawalsPage"));
-const AdminReviewsPage = lazy(() => import("@/pages/AdminReviewsPage"));
-const AdminVerificationPage = lazy(() => import("@/pages/AdminVerificationPage"));
 
 // Provider Manager pages
 const PMApplicationsPage = lazy(() => import("@/pages/PMApplicationsPage"));
