@@ -14,9 +14,9 @@ export const adminApi = {
   suspendProvider: (providerId: string) => api.put(`/admin/providers/suspend/${providerId}`),
   removeProvider: (providerId: string) => api.delete(`/admin/providers/${providerId}`),
 
-  // Stats & Analytics — matches backend route: GET /admin/stats
-  getStats: () => api.get("/admin/stats"),
-  getDashboardAnalytics: () => api.get("/admin/stats"),
+  // Stats & Analytics
+  getStats: () => api.get("/admin/analytics/dashboard/stats"),
+  getDashboardAnalytics: () => api.get("/admin/analytics/dashboard/stats"),
 
   // Bookings
   getAllBookings: () => api.get("/admin/bookings"),
