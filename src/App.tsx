@@ -49,10 +49,7 @@ const AdminTransactionsPage = lazy(() => import("@/pages/AdminTransactionsPage")
 const AdminManagersPage = lazy(() => import("@/pages/AdminManagersPage"));
 const AdminAnalyticsPage = lazy(() => import("@/pages/AdminAnalyticsPage"));
 const AdminSettingsPage = lazy(() => import("@/pages/AdminSettingsPage"));
-const AdminReportsPage = lazy(() => import("@/pages/AdminReportsPage"));
 const AdminWithdrawalsPage = lazy(() => import("@/pages/AdminWithdrawalsPage"));
-const AdminReviewsPage = lazy(() => import("@/pages/AdminReviewsPage"));
-const AdminVerificationPage = lazy(() => import("@/pages/AdminVerificationPage"));
 
 // Provider Manager pages
 const PMApplicationsPage = lazy(() => import("@/pages/PMApplicationsPage"));
@@ -133,10 +130,7 @@ const App = () => (
             <Route path="/admin/managers" element={<LW roles={["Admin"]}><AdminManagersPage /></LW>} />
             <Route path="/admin/analytics" element={<LW roles={["Admin"]}><AdminAnalyticsPage /></LW>} />
             <Route path="/admin/settings" element={<LW roles={["Admin"]}><AdminSettingsPage /></LW>} />
-            <Route path="/admin/reports" element={<LW roles={["Admin", "ProviderManager"]}><AdminReportsPage /></LW>} />
             <Route path="/admin/withdrawals" element={<LW roles={["Admin"]}><AdminWithdrawalsPage /></LW>} />
-            <Route path="/admin/reviews" element={<LW roles={["Admin"]}><AdminReviewsPage /></LW>} />
-            <Route path="/admin/verification" element={<LW roles={["Admin"]}><AdminVerificationPage /></LW>} />
 
             {/* Provider Manager */}
             <Route path="/pm/applications" element={<LW roles={["ProviderManager"]}><PMApplicationsPage /></LW>} />
